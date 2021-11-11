@@ -1,24 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import Header from "./Component/Navbar/Header";
+import Sidebar from "./Component/Navbar/Sidebar";
+import { Box } from "@mui/system";
+import Table from "./Component/Table";
+import Dashboard from "./Component/Dashboard/UserInfo";
+import Databaseinfo from "./Component/Dashboard/Databaseinfo";
+import DashboardRoutes from "./Component/Dashboard/DashboardRoutes";
+import Tables from "./Component/Dashboard/Table";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import Users from "./Component/Dashboard/Users/Users";
+import MainContentRoutes from "./MainContentRoutes";
+import SideBarRoutes from "./Component/Navbar/SideBarRoutes";
+import GetUserInfo from "./Component/Dashboard/Users/GetUserInfo";
+import InstaFeeds from "./Component/Dashboard/Instagram";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Route path="/" component={MainContentRoutes} exact>
+        <MainContentRoutes />
+      </Route>
+      <Route path="/users" component={Users} exact>
+        <Users />
+      </Route>
+
+    </Router>
   );
 }
 
