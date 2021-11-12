@@ -6,7 +6,7 @@ import Dashboard from "./Component/Dashboard/UserInfo";
 import Databaseinfo from "./Component/Dashboard/Databaseinfo";
 import DashboardRoutes from "./Component/Dashboard/DashboardRoutes";
 import Tables from "./Component/Dashboard/Table";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { HashRouter as Router, Route } from "react-router-dom";
 import Users from "./Component/Dashboard/Users/Users";
 import MainContentRoutes from "./MainContentRoutes";
 import SideBarRoutes from "./Component/Navbar/SideBarRoutes";
