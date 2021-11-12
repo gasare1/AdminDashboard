@@ -7,7 +7,7 @@ if (loading) {
 
   return (
     <div>
-      <Table striped bordered hover className="table table-striped table-dark" >
+      <Table striped bordered hover className="table table-striped" >
         <thead>
           <tr>
             <th>Photo</th>
