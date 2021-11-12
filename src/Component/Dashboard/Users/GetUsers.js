@@ -1,5 +1,6 @@
 import React, { Component, useState,useEffect } from "react";
 import { Table } from "react-bootstrap";
+import { Link } from "react-router-dom";
 const GetUsers = ({data,loading}) => {
 if (loading) {
     return <h2>Loading .....</h2>
@@ -19,11 +20,11 @@ if (loading) {
         </thead>
         <tbody>
           {data.map((item) => (
-            <tr key={item.login.uuid}>
-              <img src={item.picture.thumbnail} alt={item.name.first} />
+            <tr  key={item.login.uuid} style={{background:'black',width:'1px'}}>
+              <Link to={item.name.first} style={{background:'black',width:'15px'}}><img  src={item.picture.thumbnail} alt={item.name.first} /></Link>
             
 
-              <td>{item.name.first}</td>
+              <td >{item.name.first}</td>
               <td>{item.name.last}</td>
               <td>{item.email}</td>
               <td>
