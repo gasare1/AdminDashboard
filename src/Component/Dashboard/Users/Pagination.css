@@ -1,0 +1,34 @@
+.pagination {
+    display: inline-block;
+    border-radius: 100%;
+  }
+  
+  .pagination a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+
+   
+  }
+  li:active::after{
+    background:blue;
+    color:white;
+  }
+  
+  .pagination a.current {
+    color: black;
+    background-color: aqua;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+   
+  }
+  .page-link:target{
+    background-color: rgb(63, 63, 62);
+    border-radius: 100%;
+  }
+  li:target {
+    background: red;
+  }
+  .pagination a:hover:not(.active) {background-color: rgb(66, 62, 62)}

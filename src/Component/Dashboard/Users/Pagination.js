@@ -1,6 +1,8 @@
 import React from 'react'
-
+import { useState } from 'react';
+import './Pagination.css'
 const Pagination = ({postsPerPage, totalPosts,paginate}) => {
+    const [stats,setStats] =useState(false)
     const data = [];
     for(let i = 1; i <= Math.ceil(totalPosts/postsPerPage); i++){
         data.push(i)
@@ -8,11 +10,11 @@ const Pagination = ({postsPerPage, totalPosts,paginate}) => {
     console.log(data)
     return (
         <nav>
-            <ul className="pagination">
+            <ul className="pagination" style={{justifyContent:'center',display:'flex',alignItems:'center'}}>
                 {data.map(number => (
-                    <li key={number} className="page-item">
-                        <a onClick={() => paginate(number)} href="" className="page-link">
-                            {number ? <span style={{color:'black'}}>{number}</span>:<span></span>}
+                    <li key={number} className="page-item" id="one" >
+                        <a onClick={() => paginate(number)} className="page-link">
+                            {number }
                         </a>
                     </li>
                 ))}
