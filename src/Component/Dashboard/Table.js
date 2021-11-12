@@ -34,24 +34,11 @@ function Table() {
       color: "black",
     };
   }
-  function priceFormatter(cell, row) {
-    if (row.onSale) {
-      return (
-        <span>
-          <strong style={ { color: 'red' } }>{ cell } <img src={getInfo.picture.large}/></strong>
-        </span>
-      );
-    }
-  
-    return (
-      <span>{ cell } <img src={getInfo.picture}/></span>
-    );
-  }
+ 
   const columns = [
     {
       dataField: "id.value",
       text: "ID",
-      formatter: priceFormatter,
       sort: true
     },
     {
@@ -78,12 +65,7 @@ function Table() {
       dataField: "location.country",
       text: "Location",
       sort: true,
-      Cell: props=> (
-        <img
-          src={getInfo.picture.large}
-          width={60}
-          alt='Player'
-        />)
+     
     },
   ];
 
@@ -118,7 +100,7 @@ function Table() {
     console.error(error);
   });
   return (
-    <div >
+    <div style={{width:"80vw"}} >
         <h1 style={{justifyContent:'center',alignContent:'center',display:'flex',color:'white'}}>Registered User DATA</h1>
     <Container>
       <ToolkitProvider keyField="id" data={getInfo} columns={columns} search>
@@ -129,11 +111,12 @@ function Table() {
             <BootstrapTable
 
               keyField="id"
+              pagination={paginationFactory()}
               data={getInfo}
               columns={columns}
               selectRow={selectRow}
               rowStyle={rowStyleFormat}
-              pagination={paginationFactory()}
+              
               cellEdit={cellEditFactory({ mode: "click" })}
               {...props.baseProps}
             />

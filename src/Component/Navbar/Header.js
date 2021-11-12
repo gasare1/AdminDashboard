@@ -16,6 +16,7 @@ import AccountCircle from "@mui/icons-material/AccountCircle";
 import MailIcon from "@mui/icons-material/Mail";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import MoreIcon from "@mui/icons-material/MoreVert";
+import {HiMenuAlt2} from 'react-icons/hi'
 import Sidebar from "./Sidebar";
 import Table from '../Table.jsx'
 import {
@@ -175,6 +176,7 @@ export default function Header() {
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
         <Toolbar>
+       
           <IconButton
             size="large"
             edge="start"
@@ -182,8 +184,9 @@ export default function Header() {
             aria-label="open drawer"
             sx={{ mr: 2 }}
           >
-            
+             <HiMenuAlt2 onClick/>
           </IconButton>
+         
           <Typography
             variant="h6"
             noWrap
@@ -247,7 +250,7 @@ export default function Header() {
           </Box>
         </Toolbar>
       </AppBar>
-      
+     
      
       {renderMobileMenu}
       {renderMenu}

@@ -3,19 +3,20 @@ import axios from "axios";
 import Header from "../../Navbar/Header";
 import Sidebar from "../../Navbar/Sidebar";
 import { Box } from "@mui/system";
-import Button from "@mui/material/Button";
+import Button from '@mui/material/Button';
 import GetUserInfo from "./GetUserInfo";
 // import './App.css';
 
 function Users() {
   const [getInfo, setInfo] = useState([0]);
   const newData = [];
-  const url = "https://randomuser.me/api/?results=100";
+  const url =
+    "https://randomuser.me/api/?results=100";
 
   const getAllData = () => {
     axios.get(`${url}`).then((response) => {
       // console.log(response.results);
-
+      
       setInfo(response.data.results);
       if (response.data) {
         // console.log(response.data);
@@ -23,11 +24,11 @@ function Users() {
     });
   };
 
-  console.log("Picture");
-  console.log(getInfo);
+  console.log("Picture")
+  console.log(getInfo)
   return (
-    <div className="App" id="users">
-      <Box
+    <div className="App" id='users'>
+              <Box
         sx={{
           display: "grid",
           gridTemplateColumns: "repeat(4, 1fr)",
@@ -45,7 +46,10 @@ function Users() {
           <Sidebar />
         </Box>
         <Box sx={{ gridArea: "sidebar", bgcolor: "info.main" }}>
-          <GetUserInfo />
+        
+        <GetUserInfo/>
+        
+        
         </Box>
         <Box
           sx={{ gridArea: "sidebar", bgcolor: "warning.main" }}
@@ -55,10 +59,14 @@ function Users() {
             width: "80vw",
             alignItems: "center",
           }}
-        ></Box>
+        >
+          
+        </Box>
       </Box>
-    </div>
-  );
+        
+      </div>
+  )
 }
 
-export default Users;
+export default Users
+
