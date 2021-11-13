@@ -20,8 +20,8 @@ if (loading) {
         </thead>
         <tbody>
           {data.map((item) => (
-            <tr  key={item.login.uuid} style={{background:'black',width:'1px'}}>
-              <Link to={item.name.first} style={{background:'black',width:'15px'}}><img  src={item.picture.thumbnail} alt={item.name.first} /></Link>
+            <tr  key={item.login.uuid} style={{background:'black',width:'1px',margin:'20px'}}>
+              <Link to={item.name.first} style={{background:'black',width:'15px',marginTop:'20px'}}><img  src={item.picture.thumbnail} alt={item.name.first} /></Link>
             
 
               <td >{item.name.first}</td>
